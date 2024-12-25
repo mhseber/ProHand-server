@@ -8,9 +8,9 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 
 app.use(cors({
     origin: [
-        'http://localhost:5173/',
-        'prohand-f1b91.web.app',
-        'prohand-f1b91.firebaseapp.com'
+        'http://localhost:5173',
+        'https://prohand-f1b91.web.app',
+        'https://prohand-f1b91.firebaseapp.com'
     ]
 }));
 app.use(express.json());
@@ -32,10 +32,10 @@ const client = new MongoClient(uri, {
 async function run() {
     try {
         // Connect the client to the server	(optional starting in v4.7)
-        await client.connect();
+        // await client.connect();
         // Send a ping to confirm a successful connection
-        await client.db("admin").command({ ping: 1 });
-        console.log("Pinged your deployment. You successfully connected to MongoDB!");
+        // await client.db("admin").command({ ping: 1 });
+        // console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
         //job related apis
         const serviceCollection = client.db('ProHand').collection('pro');
