@@ -7,7 +7,11 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 
 
 app.use(cors({
-
+    origin: [
+        'http://localhost:5173/',
+        'prohand-f1b91.web.app',
+        'prohand-f1b91.firebaseapp.com'
+    ]
 }));
 app.use(express.json());
 
